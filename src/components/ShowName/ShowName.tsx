@@ -5,11 +5,11 @@ interface ShowNameProps {
     name?: string; 
 }
 
-const ShowName: React.FC<ShowNameProps & RouteComponentProps> = (name) => {
+const ShowName: React.FC<ShowNameProps & RouteComponentProps> = ({ name }) => {
     return (
         <div>
             <h2>ShowName Component</h2>
-            {/* <p>{name}</p> */}
+            <p>{name}</p>
         </div>
     )
 }
