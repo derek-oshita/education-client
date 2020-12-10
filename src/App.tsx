@@ -7,7 +7,7 @@ import './App.css';
 
 const App: React.FC = () => {
   return <div className="home-container container">
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Switch>
         <Routes />
       </Switch>

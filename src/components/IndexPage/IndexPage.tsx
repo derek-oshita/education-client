@@ -1,4 +1,5 @@
 import React from 'react'; 
+import ShowName from '../ShowName/ShowName'; 
 
 // export const IndexPage: React.FC = () => {
 //     return (
@@ -12,7 +13,7 @@ function IndexPage () {
     console.log('IndexPage...')
     return (
         <div>
-            <h1>Education Showwcase</h1>
+            <h1><ShowName /> Education Showwcase</h1>
         </div>
     )
 }
