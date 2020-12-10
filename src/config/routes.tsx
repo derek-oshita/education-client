@@ -1,15 +1,28 @@
 import React from 'react'; 
-import { Switch, Route, Redirect } from 'react-router-dom'; 
+import { Switch, Route } from 'react-router-dom'; 
 import Home from '../components/Home/Home'; 
-import { IndexPage } from '../components/IndexPage/IndexPage'; 
+import IndexPage from '../components/IndexPage/IndexPage'; 
 
-const routes = () => (
-    <Switch >
-        {/* HOME */}
-            <Route exact path='/' component={Home}/>
-        {/* INDEX PAGE */}
-            <Route exact path='/index' component={IndexPage}/>
+// export default () => (
+//     <Switch>
+        // <Route exact path="/" component={Home} />
+        // <Route exact path="/index" component={IndexPage} />
+//     </Switch>
+// )
+
+// function routes () {
+//     return (
+//         <Switch>
+//             <Route exact to="/index" component={IndexPage} />
+//         </Switch>
+//     )
+// }
+
+const Routes = () => (
+    <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/index" component={IndexPage} />
     </Switch>
 )
 
-export default routes; 
+export default Routes; 
