@@ -1,0 +1,11 @@
+#textfield-container {
+    margin-top: 2vh; 
+}
+
+#input-name {
+    width: 22vw; 
+    height: 4vh; 
+    text-align: center; 
+    border: none; 
+    border-radius: 12px;
+}
