@@ -1,19 +1,27 @@
 import React from 'react'; 
+import { withRouter } from 'react-router-dom'; 
 
-// interface EnterNameProps {
-//     name: string; 
+interface ShowNameProps {
+    name?: string; 
+}
+
+// when we have props 
+
+// const ShowName: React.FC<ShowNameProps> = (name) => {
+//     return (
+//         <div>
+//             <h2>ShowName Component</h2>
+//             <p>{name}</p>
+//         </div>
+//     )
 // }
 
-// export const EnterName: React.FC<EnterNameProps> = (name) => {
-//     return <p>{name}</p>
-// }
-
-function ShowName () {
+const ShowName: React.FC = () => {
     return (
-        <>
-        Derek 
-        </>
+        <div>
+            <h2>ShowName Component</h2>
+        </div>
     )
 }
 
-export default ShowName; 
+export default withRouter(ShowName); 
