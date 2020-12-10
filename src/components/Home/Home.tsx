@@ -10,7 +10,7 @@ function Home () {
         <div>
             <h1 className="home-header animate__animated animate__fadeInDown">Welcome to Education Showwcase</h1>
             <p className="sub-header">Type your name and click "Enter" to begin!</p>
-            <TextField/>
+            <TextField setName={setName}/>
             <div className="container">
                 <Link to='/index'>
                     <Button />

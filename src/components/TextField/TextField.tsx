@@ -2,10 +2,15 @@ import React from 'react';
 import './TextField.css'; 
 
 
-export const TextField: React.FC = () => {
+interface Props {
+    // return string later
+    setName: (name: string) => void; 
+}
+
+export const TextField: React.FC<Props> = (setName) => {
 
     const textHandler = (e: any) => {
-        console.log(e)
+        console.log(e.target.value )
     }
     return (
         <div className="container" id="textfield-container">
