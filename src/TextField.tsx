@@ -13,7 +13,7 @@ interface Props {
     person?: Person; 
 }
 
-export const TextField: React.FC<Props> = ({}) => {
+export const TextField: React.FC<Props> = () => {
     return (
         <div>
             <input />
