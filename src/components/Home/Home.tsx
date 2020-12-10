@@ -6,6 +6,7 @@ import { NavLink, Link } from 'react-router-dom';
 import Button from '../Button/Button'; 
 import './Home.css'; 
 
+
 // function Home () {
 //     const [name, setName] = useState(''); 
 //     return (
@@ -29,6 +30,8 @@ import './Home.css';
 //     )
 // }
 
+const myName: Name = 'Zero'; 
+
 const Home: React.FC = () => {
     return (
         <div>
@@ -46,7 +49,7 @@ const Home: React.FC = () => {
                     <Button />
                 </Link>
             </div>
-            <ShowName />
+            <ShowName name={myName}/>
         </div>
     )
 }
