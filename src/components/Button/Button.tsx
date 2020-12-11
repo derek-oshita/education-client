@@ -4,7 +4,7 @@ import './Button.css';
 function Button () {
     return (
         <>
-            <button className="btn" id="enter-btn">Enter</button>
+            <button type="submit" className="btn" id="enter-btn">Enter</button>
         </>
     )
 }
