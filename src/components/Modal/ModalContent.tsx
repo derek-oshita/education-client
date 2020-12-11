@@ -3,7 +3,7 @@ import './Modal.css';
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
 interface AddPostProps {
-    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number, newGrade: number ) => void; 
+    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number, newGrade: number, newDescriptionField: string) => void; 
 }
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
@@ -12,13 +12,15 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
     // newDegree
     const [newDegree, setNewDegree] = useState(''); 
     // newFieldOfStudy
-    const [newFieldOfStudy, setNewFieldOfStudy] = useState('')
+    const [newFieldOfStudy, setNewFieldOfStudy] = useState(''); 
     // newStartYear
     const [newStartYear, setNewStartYear] = useState(2000); 
     // newEndYear 
     const [newEndYear, setNewEndYear] = useState(2020); 
     // newGrade
     const [newGrade, setNewGrade] = useState(0); 
+    // newDescriptionField
+    const [newDescriptionField, setNewDescriptionField] = useState(''); 
 
     const handleSchool = (e: ChangeEvent<HTMLInputElement>) => {
         setNewSchool(e.target.value)
@@ -47,9 +49,13 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
         setNewGrade(num); 
     }
 
+    const handleNewDescriptionField = (e: ChangeEvent<HTMLInputElement>) => {
+        setNewDescriptionField(e.target.value)
+    }
+
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear, newEndYear, newGrade); 
+        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear, newEndYear, newGrade, newDescriptionField); 
         setModalOpen(false); 
     }
 
@@ -67,7 +73,6 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 <label htmlFor="degree">Degree: </label>
                 <input id="degree" type="text" value={newDegree} onChange={handleDegree}/>
 
-
                 {/* FIELD OF STUDY */}
                 <label htmlFor="fieldOfStudy">Major: </label>
                 <input id="fieldOfStudy" type="text" value={newFieldOfStudy} onChange={hanleNewFieldOfStudy}/>
@@ -83,6 +88,10 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 {/* GRADE / GPA */}
                 <label htmlFor="grade">GPA: </label>
                 <input id="grade" type="number" value={newGrade} onChange={handleNewGrade} max="4"/>
+
+                {/* DESCRIPTION FIELD */}
+                <label htmlFor="descriptionField">Description: </label>
+                <input id="descriptionField" type="text" value={newDescriptionField} onChange={handleNewDescriptionField}/>
                 
                 {/* BUTTON */}
                 <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
