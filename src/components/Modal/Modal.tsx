@@ -8,7 +8,7 @@ const Modal: React.FC<ModalProps & RouteComponentProps> = ({ modalOpen, children
     if (!modalOpen) return null; 
     
     return createPortal (
-        <ModalContent />, 
+        <ModalContent setModalOpen={() => false }/>, 
         document.body
     )
 }

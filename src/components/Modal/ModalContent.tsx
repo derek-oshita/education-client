@@ -1,13 +1,13 @@
 import React from 'react'; 
 import './Modal.css'; 
-import { withRouter } from 'react-router-dom'; 
+import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
-const ModalContent: React.FC = () => {
+const ModalContent: React.FC<ModalContentProps & RouteComponentProps> = ({ setModalOpen }) => {
     return (
         <div className="table">
             <p>Add New Education</p>
             <form>
-                <button type="submit" className="btn">Submit</button>
+                <button onClick={() => setModalOpen(false)} type="submit" className="btn">Submit</button>
             </form>
         </div>
     )
