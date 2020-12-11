@@ -1,10 +1,11 @@
 import * as React from 'react'; 
 import { BehaviorSubject } from 'rxjs';
+import { withRouter } from 'react-router-dom'; 
+import './Autocomplete.css'; 
 
 import MenuItem from '@material-ui/core/MenuItem'; 
 import TextField from '@material-ui/core/TextField'; 
 import Paper from '@material-ui/core/Paper'; 
-
 
 
 // convert values from react's onChange event handler into RxJS stream of values
@@ -32,7 +33,8 @@ const Autocomplete: React.FC = () => {
 
     // send new vlues to $subject observable in the event handler
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        subject$.next(e.target.value)
+        setValue(e.target.value); 
+        subject$.next(e.target.value); 
     }
 
     // their data contains a key property, this is what it looks like: 
@@ -50,7 +52,7 @@ const Autocomplete: React.FC = () => {
 
     return (
         <div>
-            <TextField fullWidth onChange={handleChange} value={value} placeholder="Search for your school..."/>
+            <TextField inputProps={{style: {fontSize: 20}}} fullWidth onChange={handleChange} value={value} placeholder="Search for your school..."/>
             {hasSuggestions && <Paper>suggestions.map(renderSuggestion)</Paper>}
         </div>
     )
@@ -59,3 +61,4 @@ const Autocomplete: React.FC = () => {
 
 }
 
+export default withRouter(Autocomplete); 

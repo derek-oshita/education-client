@@ -3,6 +3,7 @@ import ShowName from '../ShowName/ShowName';
 import PostList from '../PostList/PostList'; 
 import Modal from '../Modal/Modal'; 
 import ModalContent from '../Modal/ModalContent'; 
+import Autocomplete from '../Autocomplete/Autocomplete'; 
 import { withRouter, useParams } from 'react-router-dom'; 
 import './IndexPage.css'; 
 import { toEditorSettings } from 'typescript';
@@ -47,7 +48,6 @@ const IndexPage: React.FC = () => {
                         <div className="container">
                             <button onClick={() => setModalOpen(true)} className="btn">Create</button>
                         </div>
-
                         <section className="example" >
                             <Modal modalOpen={modalOpen}>
                                 <ModalContent setModalOpen={setModalOpen} addPost={addPost}/>
