@@ -1,11 +1,12 @@
 import React, { useState } from 'react'; 
 import ShowName from '../ShowName/ShowName'; 
-import { withRouter, RouteComponentProps, useParams } from 'react-router-dom'; 
-import './IndexPage.css'; 
 import PostList from '../PostList/PostList'; 
+import Modal from '../Modal/Modal'; 
+import { withRouter, useParams } from 'react-router-dom'; 
+import './IndexPage.css'; 
 
 interface RouteParams {
-    id: string; 
+    id: Name; 
 }
 
 const IndexPage: React.FC = () => {
@@ -20,6 +21,7 @@ const IndexPage: React.FC = () => {
                     <button className="btn">Create</button>
                 </div>
             </div>
+            <Modal />
         </div>
     )
 }
