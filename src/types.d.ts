@@ -14,8 +14,11 @@ type Post = {
     nameOfSchool: string; 
     degree?: string; 
     fieldOfStudy?: string; 
-    startYear: number; 
+    // startYear: number; 
+    startYear: any; 
     endYear?: number; 
     grade?: number; 
     descriptionField?: string;   
 }
+
+type Year = number; 

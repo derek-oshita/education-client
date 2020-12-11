@@ -9,17 +9,24 @@ interface AddPostProps {
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
     // need to consider adding more hooks in order to get all of the information 
     const [newSchool, setNewSchool] = useState('');
-    const [newStartYear, setNewStartYear] = useState<number>(0); 
+    // useState<number>(0) won't allow you to change the value
+    const [newStartYear, setNewStartYear] = useState(0); 
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setNewSchool(e.target.value)
         // setNewSchool(e.target.value)
         // conditional statement here around the type of value 
-        if (typeof e.target.value === 'string') {
-            setNewSchool(e.target.value)
-        } else if (typeof e.target.value === 'number') {
-            setNewStartYear(e.target.value)
-        }
+        // if (typeof e.target.value === 'string') {
+        //     setNewSchool(e.target.value)
+        // } else if (typeof e.target.value === 'number') {
+        //     setNewStartYear(e.target.value)
+        // }
     } 
+
+    const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+        let num = parseInt(e.target.value)
+        setNewStartYear(num)
+    }
 
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
@@ -32,7 +39,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
             <p>Add New Education</p>
             <form>
                 <input type="text" value={newSchool} onChange={handleChange}/>
-                <input type="text" value={newStartYear}/>
+                <input type="number" value={newStartYear} onChange={handleNumberChange}/>
                 {/* <input type="text"/>
                 <input type="text"/>
                 <input type="text"/>
