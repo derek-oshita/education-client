@@ -5,6 +5,7 @@ import Modal from '../Modal/Modal';
 import ModalContent from '../Modal/ModalContent'; 
 import { withRouter, useParams } from 'react-router-dom'; 
 import './IndexPage.css'; 
+import { toEditorSettings } from 'typescript';
 
 interface RouteParams {
     id: Name; 
@@ -50,6 +51,12 @@ const IndexPage: React.FC = () => {
     const [posts, setPosts] = useState(initialPosts); 
 
     const params  = useParams<RouteParams>(); 
+
+    // need to figure out how to handle more values
+    const addPost = (nameOfSchool: string, newStartYear: number) => {
+        setPosts([...posts, { nameOfSchool: nameOfSchool,  startYear: newStartYear}])
+    } 
+
     return(
         <>
         <div className="index-container">
@@ -66,7 +73,7 @@ const IndexPage: React.FC = () => {
                                 <button onClick={() => setModalOpen(true)} className="btn">Create</button>
                             </div> */}
                             <Modal modalOpen={modalOpen}>
-                                <ModalContent setModalOpen={setModalOpen} />
+                                <ModalContent setModalOpen={setModalOpen} addPost={addPost}/>
                             </Modal> 
                         </section>
                 </div>
