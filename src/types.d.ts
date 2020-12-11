@@ -22,4 +22,6 @@ type Post = {
 
 type Year = number; 
 
+type Item = any; 
+
 

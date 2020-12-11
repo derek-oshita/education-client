@@ -1,10 +1,17 @@
 import React, { useState } from 'react'; 
+import { Link } from 'react-router-dom'; 
 import ShowName from '../ShowName/ShowName'
 import CreateName from '../CreateName/CreateName'; 
-import Autocomplete from '../Autocomplete/Autocomplete'; 
-import { Link } from 'react-router-dom'; 
+// import Autocomplete from '../Autocomplete/Autocomplete'; 
+// import { getSuggestions, Suggestion } from '../Autocomplete/Suggestion-services'; 
 // import Button from '../Button/Button'; 
 import './Home.css'; 
+
+// const renderSuggestion = (suggestion: Suggestion) => {
+//     // return `${suggestion.name} - ${suggestion.country}`
+//     return `${suggestion.name}`
+
+// }
 
 
 const Home: React.FC = () => {
@@ -19,9 +26,6 @@ const Home: React.FC = () => {
             <p className="sub-header">Type your name and click "Enter" to begin!</p>
             <CreateName addName={addName}/>
 
-
-            {/* AUTOCOMPLETE TESTING HERE */}
-            <Autocomplete />
         </div>
     )
 }

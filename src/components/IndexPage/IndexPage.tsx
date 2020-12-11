@@ -3,7 +3,6 @@ import ShowName from '../ShowName/ShowName';
 import PostList from '../PostList/PostList'; 
 import Modal from '../Modal/Modal'; 
 import ModalContent from '../Modal/ModalContent'; 
-import Autocomplete from '../Autocomplete/Autocomplete'; 
 import { withRouter, useParams } from 'react-router-dom'; 
 import './IndexPage.css'; 
 import { toEditorSettings } from 'typescript';
