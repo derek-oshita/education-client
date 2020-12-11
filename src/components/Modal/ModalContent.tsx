@@ -3,7 +3,7 @@ import './Modal.css';
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
 interface AddPostProps {
-    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number ) => void; 
+    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number, newGrade: number ) => void; 
 }
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
@@ -17,7 +17,8 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
     const [newStartYear, setNewStartYear] = useState(2000); 
     // newEndYear 
     const [newEndYear, setNewEndYear] = useState(2020); 
-
+    // newGrade
+    const [newGrade, setNewGrade] = useState(0); 
 
     const handleSchool = (e: ChangeEvent<HTMLInputElement>) => {
         setNewSchool(e.target.value)
@@ -41,9 +42,14 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
         setNewEndYear(num); 
     }
 
+    const handleNewGrade = (e: ChangeEvent<HTMLInputElement>) => {
+        let num = parseInt(e.target.value)
+        setNewGrade(num); 
+    }
+
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear, newEndYear); 
+        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear, newEndYear, newGrade); 
         setModalOpen(false); 
     }
 
@@ -73,6 +79,10 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 {/* END YEAR */}
                 <label htmlFor="endYear">End Year: </label>
                 <input id="endYear" type="number" value={newEndYear} onChange={handleNewEndYear} max="2020"/>
+
+                {/* GRADE / GPA */}
+                <label htmlFor="grade">GPA: </label>
+                <input id="grade" type="number" value={newGrade} onChange={handleNewGrade} max="4"/>
                 
                 {/* BUTTON */}
                 <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
