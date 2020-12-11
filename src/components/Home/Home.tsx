@@ -17,19 +17,6 @@ const Home: React.FC = () => {
             <h1 className="home-header animate__animated animate__fadeInDown">Welcome to Education Showwcase</h1>
             <p className="sub-header">Type your name and click "Enter" to begin!</p>
             <CreateName addName={addName}/>
-            <div className="container">
-                <Link to='/index'>
-                {/* <Link to = {{
-                    pathname: "/index", 
-                    state: {
-                        name: name
-                    }
-                }}> */}
-                    {/* <Button /> */}
-                </Link>
-            </div>
-            {/* change myName later */}
-            <ShowName name={name}/>
         </div>
     )
 }

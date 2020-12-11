@@ -4,7 +4,7 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import './App.css'; 
 
 const App: React.FC = () => {
-  return <div className="home-container container">
+  return <div className="home-container">
     <BrowserRouter>
       <Switch>
         <Routes />

@@ -1,0 +1,7 @@
+.sidebar {
+    /* margin-left: 0;  */
+    width: 25vw; 
+    height: 100vh; 
+    border: 1px solid black; 
+    background-color: #fdfbfb;
+}

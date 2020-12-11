@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
+import './ShowName.css'; 
 
 interface ShowNameProps {
     name?: string; 
@@ -8,7 +9,7 @@ interface ShowNameProps {
 const ShowName: React.FC<ShowNameProps & RouteComponentProps> = ({ name }) => {
     return (
         <div>
-            <p>Education Showwcase for {name}</p>
+            <p id="show-name">Education Showwcase for {name}</p>
         </div>
     )
 }
