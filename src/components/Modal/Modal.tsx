@@ -18,8 +18,6 @@ const Wrapper = styled.div`
 
 // background: rgba(0,0,0,0.1); 
 
-// with createPortal , document.body it shoves it to the bottom
-// without, it forces it to the side???
 
 const Modal: React.FC<ModalProps & RouteComponentProps> = ({ modalOpen, children }) => {
     if (!modalOpen) return null; 

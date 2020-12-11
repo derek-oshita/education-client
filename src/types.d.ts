@@ -9,3 +9,13 @@ type ModalProps = {
 type ModalContentProps = {
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>; 
 }
+
+type Post = {
+    nameOfSchool: string; 
+    degree: string; 
+    fieldOfStudy: string; 
+    startYear: number; 
+    endYear: number; 
+    grade: number; 
+    descriptionField: string;   
+}
