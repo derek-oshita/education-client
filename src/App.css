@@ -42,6 +42,17 @@ a {
   text-decoration: none;
 }
 
+/* DELETE BELOW */
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .home-container {
   height: 100vh; 
   width: 100vw; 

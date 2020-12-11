@@ -1,13 +1,23 @@
 .index-container {
     display: flex; 
+    /* align-items: center; */
     width: 100vw; 
+    height: 100vh; 
 }
 
 .table {
     border: 2px solid black; 
+    border-radius: 15px; 
     background-color: #fdfbfb;
     height: 20vh; 
-    width: 30vw; 
-    margin-top: 40vh; 
-    margin-left: 21.5vw; 
+    width: 50vw; 
+    margin-top: 5vh; 
+    margin-left: 12vw; 
+  }
+
+  .example {
+      border: 2px solid black; 
+      margin-top: 15vh; 
+      width: 50vw; 
+
   }
