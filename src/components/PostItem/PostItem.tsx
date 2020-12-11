@@ -8,7 +8,7 @@ interface PostItemProps {
 const PostItem: React.FC<PostItemProps & RouteComponentProps> = ({ post }) => {
     return(
         <>
-        <h3>{post.nameOfSchool}</h3>
+        <p>{post.nameOfSchool}</p>
         <p>{post.degree}</p>
         <p>{post.fieldOfStudy}</p>
         <p>{post.startYear}</p>
