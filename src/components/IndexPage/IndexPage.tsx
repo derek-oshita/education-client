@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import ShowName from '../ShowName/ShowName'; 
 import { withRouter, RouteComponentProps, useParams } from 'react-router-dom'; 
 
+interface RouteParams {
+    id: string; 
+}
+
 const IndexPage: React.FC = () => {
-    console.log(useParams())
+    const params  = useParams<RouteParams>(); 
     return(
-        <ShowName />
+        <ShowName name={params.id}/>
     )
 }
 
