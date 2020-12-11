@@ -76,7 +76,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 <label htmlFor="fieldOfStudy">Major: </label>
                 <input id="fieldOfStudy" type="text" value={newFieldOfStudy} onChange={hanleNewFieldOfStudy}/>
                 
-                <div>
+                <div className="number-field-div">
                 {/* START YEAR */}
                 <label htmlFor="startYear">Start Year: </label>
                 <input id="startYear" type="number" value={newStartYear} onChange={handleNewStartYear} max="2020"/>
@@ -96,7 +96,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 <input id="descriptionField" type="text" value={newDescriptionField} onChange={handleNewDescriptionField}/>
                 
                 {/* BUTTON */}
-                <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
+                <button onClick={handleSubmit} type="submit" className="btn modal-btn">Submit</button>
             </form>
         </div>
     )

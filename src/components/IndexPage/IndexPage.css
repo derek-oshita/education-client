@@ -18,7 +18,10 @@
   }
 
   .example {
-      /* border: 2px solid black;  */
+      border: 2px solid black; 
+      background-image: url('../../images/wolfpack_baby.png');
+      background-size: 49.5vw 60vh;  
+      background-repeat: no-repeat; 
       border-radius: 15px; 
       margin-top: 15vh; 
       max-width: 50vw; 

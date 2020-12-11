@@ -1,11 +1,4 @@
-.modal {
-    padding-top: 7vh; 
-    border: 2px solid black; 
-    border-radius: 15px; 
-    background-color: #fdfbfb;
-    height: 60vh; 
-    width: 55vw; 
-}
+
 
 form {
     display: block; 
@@ -16,14 +9,32 @@ form {
 
 label {
     display: inline-block; 
-    margin-bottom: 8px; 
+    /* margin-bottom: 8px;  */
 }
 
-input[type="text"], 
-inpu[type="number"] {
+input[type="text"] {
+    line-height: 1em; 
     display: block; 
     width: 100%; 
     padding: 10px 15px; 
     margin: 0 auto 15px; 
-    font-size: 18px; 
+    font-size: 5px; 
 }
+
+.modal {
+    padding-top: 2vh; 
+    border: 2px solid black; 
+    border-radius: 15px; 
+    background-color: #fdfbfb;
+    height: 60vh; 
+    width: 55vw; 
+}
+
+/* remove to make more responsive */
+ .number-field-div {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    height: 5vh; 
+ } 
+
