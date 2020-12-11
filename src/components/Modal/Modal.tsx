@@ -1,11 +1,15 @@
 import React from 'react'; 
-import { withRouter } from 'react-router-dom'; 
+import { createPortal } from 'react-dom'; 
+import { withRouter, RouteComponentProps } from 'react-router-dom'; 
+import './Modal.css'; 
+import ModalContent from './ModalContent'; 
 
-const Modal: React.FC = () => {
-    return (
-        <div>
-            Modal... 
-        </div>
+const Modal: React.FC<ModalProps & RouteComponentProps> = ({ modalOpen, children }) => {
+    if (!modalOpen) return null; 
+    
+    return createPortal (
+        <ModalContent />, 
+        document.body
     )
 }
 

@@ -10,18 +10,22 @@ interface RouteParams {
 }
 
 const IndexPage: React.FC = () => {
+    const [modalOpen, setModalOpen] = useState(false)
+
     const params  = useParams<RouteParams>(); 
     return(
-        // <div className="index-container container">
         <div className="index-container">
             <PostList />
             <div className="table">
                 <ShowName name={params.id}/>
+
+                {/* OPEN MODAL BUTTON */}
                 <div className="container">
-                    <button className="btn">Create</button>
+                    <button onClick={() => setModalOpen(true)} className="btn">Create</button>
                 </div>
+
             </div>
-            <Modal />
+            <Modal modalOpen={modalOpen}/>
         </div>
     )
 }
