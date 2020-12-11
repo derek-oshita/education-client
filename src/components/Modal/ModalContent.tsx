@@ -3,7 +3,7 @@ import './Modal.css';
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
 interface AddPostProps {
-    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number ) => void; 
+    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number ) => void; 
 }
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
@@ -15,6 +15,8 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
     const [newFieldOfStudy, setNewFieldOfStudy] = useState('')
     // newStartYear
     const [newStartYear, setNewStartYear] = useState(2000); 
+    // newEndYear 
+    const [newEndYear, setNewEndYear] = useState(2020); 
 
 
     const handleSchool = (e: ChangeEvent<HTMLInputElement>) => {
@@ -29,15 +31,19 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
         setNewFieldOfStudy(e.target.value)
     }
 
-
-    const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleNewStartYear = (e: ChangeEvent<HTMLInputElement>) => {
         let num = parseInt(e.target.value)
         setNewStartYear(num); 
     }
 
+    const handleNewEndYear = (e: ChangeEvent<HTMLInputElement>) => {
+        let num = parseInt(e.target.value)
+        setNewEndYear(num); 
+    }
+
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear); 
+        addPost(newSchool, newDegree, newFieldOfStudy, newStartYear, newEndYear); 
         setModalOpen(false); 
     }
 
@@ -61,7 +67,12 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 <input id="fieldOfStudy" type="text" value={newFieldOfStudy} onChange={hanleNewFieldOfStudy}/>
                 
                 {/* START YEAR */}
-                <input type="number" value={newStartYear} onChange={handleNumberChange} max="2020"/>
+                <label htmlFor="startYear">Start Year: </label>
+                <input id="startYear" type="number" value={newStartYear} onChange={handleNewStartYear} max="2020"/>
+
+                {/* END YEAR */}
+                <label htmlFor="endYear">End Year: </label>
+                <input id="endYear" type="number" value={newEndYear} onChange={handleNewEndYear} max="2020"/>
                 
                 {/* BUTTON */}
                 <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
