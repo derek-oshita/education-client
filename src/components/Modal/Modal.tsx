@@ -12,10 +12,11 @@ const Wrapper = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    width: 100vw; 
-    height: 100vh; 
-    background: rgba(0,0,0,0.1); 
+    width: 50vw; 
+    height: 60vh; 
 `
+
+// background: rgba(0,0,0,0.1); 
 
 // with createPortal , document.body it shoves it to the bottom
 // without, it forces it to the side???
