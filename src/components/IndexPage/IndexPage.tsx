@@ -34,7 +34,7 @@ const IndexPage: React.FC = () => {
     const params  = useParams<RouteParams>(); 
 
     // need to figure out how to handle more values
-    const addPost = (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number, newGrade: number, newDescriptionField: string) => {
+    const addPost = (nameOfSchool: Name, degree: Name, fieldOfStudy: Name, newStartYear: Year, newEndYear: Year, newGrade: Year, newDescriptionField: string) => {
         setPosts([...posts, { nameOfSchool: nameOfSchool, degree: degree,  fieldOfStudy: fieldOfStudy, startYear: newStartYear, endYear: newEndYear, grade: newGrade, descriptionField: newDescriptionField}])
     } 
 

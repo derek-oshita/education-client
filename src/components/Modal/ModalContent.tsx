@@ -3,7 +3,7 @@ import './Modal.css';
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
 interface AddPostProps {
-    addPost: (nameOfSchool: string, degree: string, fieldOfStudy: string, newStartYear: number, newEndYear: number, newGrade: number, newDescriptionField: string) => void; 
+    addPost: (nameOfSchool: Name, degree: Name, fieldOfStudy: string, newStartYear: Year, newEndYear: Year, newGrade: number, newDescriptionField: string) => void; 
 }
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
@@ -64,7 +64,6 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
             <p>Add New Education</p>
             {/* FORM STARTS HERE */}
             <form>
-
                 {/* NAME OF SCHOOL */}
                 <label htmlFor="newSchool">Name of School: </label>
                 <input id="newSchool" type="text" value={newSchool} onChange={handleSchool}/>
@@ -77,6 +76,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 <label htmlFor="fieldOfStudy">Major: </label>
                 <input id="fieldOfStudy" type="text" value={newFieldOfStudy} onChange={hanleNewFieldOfStudy}/>
                 
+                <div>
                 {/* START YEAR */}
                 <label htmlFor="startYear">Start Year: </label>
                 <input id="startYear" type="number" value={newStartYear} onChange={handleNewStartYear} max="2020"/>
@@ -88,8 +88,10 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
                 {/* GRADE / GPA */}
                 <label htmlFor="grade">GPA: </label>
                 <input id="grade" type="number" value={newGrade} onChange={handleNewGrade} max="4"/>
+                </div>
 
                 {/* DESCRIPTION FIELD */}
+                <div></div>
                 <label htmlFor="descriptionField">Description: </label>
                 <input id="descriptionField" type="text" value={newDescriptionField} onChange={handleNewDescriptionField}/>
                 
@@ -100,7 +102,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
     )
 }; 
 
-export default withRouter(ModalContent)
+export default withRouter(ModalContent); 
 
 
 

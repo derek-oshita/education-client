@@ -13,12 +13,11 @@ type ModalContentProps = {
 type Post = {
     nameOfSchool: string; 
     degree: string; 
-    fieldOfStudy?: string; 
-    // startYear: number; 
-    startYear: any; 
-    endYear?: number; 
-    grade?: number; 
-    descriptionField?: string;   
+    fieldOfStudy: string; 
+    startYear: number; 
+    endYear: number; 
+    grade: number; 
+    descriptionField: string;   
 }
 
 type Year = number; 
