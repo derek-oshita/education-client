@@ -3,49 +3,55 @@ import './Modal.css';
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
 
 interface AddPostProps {
-    addPost: (nameOfSchool: string, newStartYear: number ) => void; 
+    addPost: (nameOfSchool: string, degree: string, newStartYear: number ) => void; 
 }
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
-    // need to consider adding more hooks in order to get all of the information 
+    // newsSchool
     const [newSchool, setNewSchool] = useState('');
-    // useState<number>(0) won't allow you to change the value
-    const [newStartYear, setNewStartYear] = useState(0); 
+    // newDegree
+    const [newDegree, setNewDegree] = useState(''); 
+    // newStartYear
+    const [newStartYear, setNewStartYear] = useState(2000); 
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+    const handleSchool = (e: ChangeEvent<HTMLInputElement>) => {
         setNewSchool(e.target.value)
-        // setNewSchool(e.target.value)
-        // conditional statement here around the type of value 
-        // if (typeof e.target.value === 'string') {
-        //     setNewSchool(e.target.value)
-        // } else if (typeof e.target.value === 'number') {
-        //     setNewStartYear(e.target.value)
-        // }
     } 
+
+    const handleDegree = (e: ChangeEvent<HTMLInputElement>) => {
+        setNewDegree(e.target.value)
+    }
 
     const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
         let num = parseInt(e.target.value)
-        setNewStartYear(num)
+        setNewStartYear(num); 
     }
 
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        addPost(newSchool, newStartYear); 
+        addPost(newSchool, newDegree, newStartYear); 
         setModalOpen(false); 
     }
 
     return (
         <div className="modal">
             <p>Add New Education</p>
+            {/* FORM STARTS HERE */}
             <form>
-                <input type="text" value={newSchool} onChange={handleChange}/>
-                <input type="number" value={newStartYear} onChange={handleNumberChange}/>
-                {/* <input type="text"/>
-                <input type="text"/>
-                <input type="text"/>
-                <input type="text"/>
-                <input type="text"/> */}
-                {/* this had setModalOpen(false) */}
+
+                {/* NAME OF SCHOOL */}
+                <label htmlFor="newSchool">Name of School: </label>
+                <input id="newSchool" type="text" value={newSchool} onChange={handleSchool}/>
+
+                {/* DEGREE */}
+                <label htmlFor="degree">Degree: </label>
+                <input id="degree" type="text" value={newDegree} onChange={handleDegree}/>
+
+
+                <input type="number" value={newStartYear} onChange={handleNumberChange} max="2020"/>
+                
+                {/* BUTTON */}
                 <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
             </form>
         </div>
@@ -53,4 +59,7 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
 }; 
 
 export default withRouter(ModalContent)
+
+
+
 

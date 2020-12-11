@@ -34,8 +34,8 @@ const IndexPage: React.FC = () => {
     const params  = useParams<RouteParams>(); 
 
     // need to figure out how to handle more values
-    const addPost = (nameOfSchool: string, newStartYear: number) => {
-        setPosts([...posts, { nameOfSchool: nameOfSchool,  startYear: newStartYear}])
+    const addPost = (nameOfSchool: string, degree: string, newStartYear: number) => {
+        setPosts([...posts, { nameOfSchool: nameOfSchool, degree: degree,  startYear: newStartYear}])
     } 
 
     return(
@@ -49,10 +49,6 @@ const IndexPage: React.FC = () => {
                         </div>
 
                         <section className="example" >
-                            {/* <ShowName name={params.id}/>
-                            <div className="container">
-                                <button onClick={() => setModalOpen(true)} className="btn">Create</button>
-                            </div> */}
                             <Modal modalOpen={modalOpen}>
                                 <ModalContent setModalOpen={setModalOpen} addPost={addPost}/>
                             </Modal> 
