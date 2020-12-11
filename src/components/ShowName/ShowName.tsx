@@ -8,8 +8,7 @@ interface ShowNameProps {
 const ShowName: React.FC<ShowNameProps & RouteComponentProps> = ({ name }) => {
     return (
         <div>
-            <h2>ShowName Component</h2>
-            <p>{name}</p>
+            <p>Education Showwcase for {name}</p>
         </div>
     )
 }

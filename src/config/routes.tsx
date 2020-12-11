@@ -6,7 +6,7 @@ import IndexPage from '../components/IndexPage/IndexPage';
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/index" component={IndexPage} />
+        <Route exact path="/:id" component={IndexPage} />
     </Switch>
 )
 

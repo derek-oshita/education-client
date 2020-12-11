@@ -29,8 +29,7 @@ const Home: React.FC = () => {
                 </Link>
             </div>
             {/* change myName later */}
-            {name}
-            <ShowName />
+            <ShowName name={name}/>
         </div>
     )
 }

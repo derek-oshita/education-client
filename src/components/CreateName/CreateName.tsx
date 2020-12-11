@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react'; 
 import './CreateName.css'; 
-import { withRouter, RouteComponentProps } from 'react-router-dom'; 
-import Button from '../Button/Button'; 
+import { Link, withRouter, RouteComponentProps, useHistory } from 'react-router-dom'; 
 
 interface CreateNameProps {
     addName: AddName; 
@@ -10,6 +9,8 @@ interface CreateNameProps {
 const CreateName: React.FC<CreateNameProps & RouteComponentProps> = ({ addName }) => {
     const [ newName, setNewName ] = useState(''); 
 
+    const history = useHistory(); 
+
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setNewName(e.target.value)
     }
@@ -17,6 +18,7 @@ const CreateName: React.FC<CreateNameProps & RouteComponentProps> = ({ addName }
     const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
         e.preventDefault(); 
         addName(newName); 
+        history.push(`/${newName}`); 
     }
 
     return (
@@ -25,16 +27,7 @@ const CreateName: React.FC<CreateNameProps & RouteComponentProps> = ({ addName }
                 {/* <input onChange={nameHandler} id="input-name" className="input-field"/> */}
                 <input value={newName} onChange={handleChange} id="input-name" className="input-field"/>
                 <div className="container">
-                    {/* <Link to='/index'> */}
-                    {/* <Link to = {{
-                        pathname: "/index", 
-                        state: {
-                            name: name
-                        }
-                    }}> */}
-                    {/* <Button onClick={handleSubmit} /> */}
-                    <button className="btn" type="submit" onClick={handleSubmit} />
-                    {/* </Link> */}
+                    <button className="btn" type="submit" onClick={handleSubmit}>Enter</button>
                 </div>
             </form>
         </div>

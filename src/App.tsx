@@ -5,7 +5,7 @@ import './App.css';
 
 const App: React.FC = () => {
   return <div className="home-container container">
-    <BrowserRouter >
+    <BrowserRouter>
       <Switch>
         <Routes />
       </Switch>
