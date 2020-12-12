@@ -1,18 +1,17 @@
 import React, { useState } from 'react'; 
-import { Link } from 'react-router-dom'; 
-import ShowName from '../ShowName/ShowName'
-import CreateName from '../CreateName/CreateName'; 
+import { render } from 'react-dom'; 
 import { Autocomplete } from '../Autocomplete/Autocomplete'; 
-// import { getSuggestions, Suggestion } from '../Autocomplete/Suggestion-services'; 
+import { getSuggestions, Suggestion } from '../Autocomplete/Suggestion-services'; 
+import CreateName from '../CreateName/CreateName'; 
 // import Button from '../Button/Button'; 
 import './Home.css'; 
 
 
-// const renderSuggestion = (suggestion: Suggestion) => {
-//     // return `${suggestion.name} - ${suggestion.country}`
-//     return `${suggestion.name}`
+const renderSuggestion = (suggestion: Suggestion) => {
+    // return `${suggestion.name} - ${suggestion.country}`
+    return `${suggestion.name}`
 
-// }
+}
 
 
 const Home: React.FC = () => {
@@ -28,7 +27,7 @@ const Home: React.FC = () => {
             <CreateName addName={addName}/>
 
 
-            <Autocomplete />
+            <Autocomplete getSuggestions={getSuggestions} renderSuggestion={renderSuggestion} onSelect={suggestion => console.log(suggestion)}/>
         </div>
     )
 }

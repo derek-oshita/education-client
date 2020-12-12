@@ -14,6 +14,12 @@ interface Props<S> {
   onSelect?: (suggestion: S) => void;
 }
 
+// interface Props<A> {
+//   getSuggestions: <A>(subject: BehaviorSubject<any>) => Observable<A[]>;
+//   renderSuggestion?: (suggestion: A) => JSX.Element | any;
+//   onSelect?: (suggestion: A) => void;
+// }
+
 // observable that allows us to conver values from React's onChange event handler into a stream of values
 const subject$ = new BehaviorSubject(''); 
 
