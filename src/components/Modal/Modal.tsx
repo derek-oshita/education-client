@@ -1,9 +1,10 @@
 import React from 'react'; 
+import styled from 'styled-components'; 
 import { createPortal } from 'react-dom'; 
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
+
 import './Modal.css'; 
-import ModalContent from './ModalContent'; 
-import styled from 'styled-components'; 
+
 
 const Wrapper = styled.div`
     positon: absolute; 
@@ -16,15 +17,10 @@ const Wrapper = styled.div`
     height: 60vh; 
 `
 
-// background: rgba(0,0,0,0.1); 
-
-
 const Modal: React.FC<ModalProps & RouteComponentProps> = ({ modalOpen, children }) => {
     if (!modalOpen) return null; 
-    
     return (
         <Wrapper>
-            {/* <ModalContent setModalOpen={() => false }/> */}
             {children}
         </Wrapper>
     )

@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react'; 
+import { withRouter, RouteComponentProps, useHistory } from 'react-router-dom'; 
+
 import './CreateName.css'; 
-import { Link, withRouter, RouteComponentProps, useHistory } from 'react-router-dom'; 
+
 
 interface CreateNameProps {
     addName: AddName; 
@@ -24,7 +26,6 @@ const CreateName: React.FC<CreateNameProps & RouteComponentProps> = ({ addName }
     return (
         <div className="container" id="textfield-container">
             <form>
-                {/* <input onChange={nameHandler} id="input-name" className="input-field"/> */}
                 <input value={newName} onChange={handleChange} id="input-name" className="input-field"/>
                 <div className="container">
                     <button className="btn" type="submit" onClick={handleSubmit}>Enter</button>

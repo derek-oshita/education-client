@@ -1,6 +1,8 @@
 import React from 'react'; 
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
+
 import './ShowName.css'; 
+
 
 interface ShowNameProps {
     name?: string; 

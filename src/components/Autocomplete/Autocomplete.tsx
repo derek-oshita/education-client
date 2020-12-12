@@ -7,7 +7,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 import './Autocomplete.css'; 
 
-
+// for use in parent component
+// const renderSuggestion = (suggestion: Suggestion) => {
+//   return `${suggestion.name}`
+// }
 
 interface Props<S> {
   getSuggestions: <S>(subject: BehaviorSubject<string>) => Observable<S[]>;
@@ -22,7 +25,6 @@ export function Autocomplete<S>(props: Props<S>) {
   const { renderSuggestion = (s: S) => s, onSelect, getSuggestions } = props; 
   const [value, setValue] = React.useState(''); 
   const [suggestions, setSuggestions] = React.useState<S[]>([]); 
-
 
   // callback to every change in input field
   React.useEffect(() => {

@@ -1,18 +1,12 @@
 import React, { FormEvent, ChangeEvent, useState }from 'react'; 
-import './Modal.css'; 
 import { withRouter, RouteComponentProps } from 'react-router-dom'; 
-// import { getSuggestions, Suggestion } from '../Autocomplete/Suggestion-services'; 
-// import Autocomplete from '../Autocomplete/Autocomplete'; 
 
-// const renderSuggestion = (suggestion: Suggestion) => {
-//     return `${suggestion.name} - ${suggestion.country}`
-// }
+import './Modal.css'; 
+
 
 interface AddPostProps {
     addPost: (nameOfSchool: Name, degree: Name, fieldOfStudy: string, newStartYear: Year, newEndYear: Year, newGrade: number, newDescriptionField: string) => void; 
 }
-
-
 
 const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostProps> = ({ setModalOpen, addPost }) => {
     // newsSchool
@@ -69,7 +63,9 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
 
     return (
         <div className="modal">
-            <p>Add New Education</p>
+            <div className="modal-header">
+                <p>Add New Education</p>
+            </div>
             {/* FORM STARTS HERE */}
             <form>
 

@@ -17,7 +17,7 @@ const transformResponse = ({ response }: AjaxResponse) => {
 export const getSuggestions = (subject: BehaviorSubject<string>): Observable<any[]> => {
   return subject.pipe(
     // time between response and when user stops typing
-    debounceTime(500),
+    debounceTime(5250),
     // send request only if there are 2 or more characters
     filter(v => v.length > 1), 
     // form url 
