@@ -17,7 +17,7 @@ type Post = {
     startYear: number; 
     endYear: number; 
     grade: number; 
-    descriptionField: string;   
+    descriptionField?: string;   
 }
 
 type Year = number; 

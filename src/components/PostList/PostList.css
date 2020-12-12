@@ -1,6 +1,7 @@
 .postlist-container {
     background-color: white; 
     height: 10vh; 
+    border: 2px solid black; 
 }
 
 .sidebar {
@@ -9,4 +10,9 @@
     /* border: 2px solid black;  */
     background-color: #bdd4e7;
     background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+    /* background-color: #455AE6;  */
+}
+
+.divider {
+    height: 2vh; 
 }

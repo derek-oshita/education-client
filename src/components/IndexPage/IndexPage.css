@@ -1,22 +1,24 @@
 .example {
-    background-image: url('../../images/wolfpack_baby.png');
-    background-size: 49.5vw 60vh;  
+    /* background-image: url('../../images/wolfpack_baby.png'); */
+    background-image: url('../../images/nevada.jpg');
+    background-size: 50vw 60vh;  
     background-repeat: no-repeat; 
     border-radius: 15px; 
     margin-top: 15vh; 
     max-width: 50vw; 
     height: 60vh; 
     background-color: #fdfbfb;
+    /* border: 1px solid black ; */
 }
 
 .index-container {
     display: flex; 
-    /* align-items: center; */
     width: 100vw; 
     height: 100vh; 
 }
 
 .table {
+    border: 2px solid black; 
     border-radius: 15px; 
     background-color: #fdfbfb;
     height: 20vh; 
