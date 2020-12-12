@@ -1,11 +1,12 @@
 import * as React from "react";
 import { withRouter } from  'react-router-dom'; 
+import { BehaviorSubject, Observable } from "rxjs";
 
 import Paper from "@material-ui/core/Paper";
 import MenuItem from "@material-ui/core/MenuItem";
 
 import './Autocomplete.css'; 
-import { BehaviorSubject, Observable } from "rxjs";
+
 
 
 interface Props<S> {
@@ -14,15 +15,8 @@ interface Props<S> {
   onSelect?: (suggestion: S) => void;
 }
 
-// interface Props<A> {
-//   getSuggestions: <A>(subject: BehaviorSubject<any>) => Observable<A[]>;
-//   renderSuggestion?: (suggestion: A) => JSX.Element | any;
-//   onSelect?: (suggestion: A) => void;
-// }
-
-// observable that allows us to conver values from React's onChange event handler into a stream of values
+// observable that allows us to convert values from React's onChange event handler into a stream of values
 const subject$ = new BehaviorSubject(''); 
-
 
 export function Autocomplete<S>(props: Props<S>) {
   const { renderSuggestion = (s: S) => s, onSelect, getSuggestions } = props; 
@@ -45,13 +39,11 @@ export function Autocomplete<S>(props: Props<S>) {
     return () => subscription.unsubscribe(); 
   }, []); 
 
-
   // send new values to subject observable
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
     subject$.next(e.target.value)
   }
-
 
   const handleSelect = (idx: number) => {
     if (onSelect) {
@@ -60,20 +52,11 @@ export function Autocomplete<S>(props: Props<S>) {
     }
   }
 
-
-  // const renderSuggestion = (suggestion: any) => {
-  //   // consider changing the key to another value like country
-  // return <MenuItem key={suggestion.name}>{suggestion.name}</MenuItem>
-  // }
-
-  const shouldShowSuggestions = suggestions.length > 0 && value.length > 2;
-
+  const shouldShowSuggestions = suggestions.length > 0 && value.length > 1;
 
   return(
     <div>
-
       <input className="autocomplete" type="text" onChange={handleChange} value={value} />
-
       {shouldShowSuggestions && (
         <Paper>
           {suggestions.map((suggestion, idx) => (
@@ -86,8 +69,6 @@ export function Autocomplete<S>(props: Props<S>) {
           ))}
         </Paper>
       )}
-
-
     </div>
   )
 }
