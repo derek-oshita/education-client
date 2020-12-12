@@ -68,7 +68,8 @@ const ModalContent: React.FC<ModalContentProps & RouteComponentProps & AddPostPr
             </div>
             {/* FORM STARTS HERE */}
             <form>
-
+                
+                {/* UNFORTUNATELY, I COULDN'T GET THE API CALL ON AUTOCOMPLETE TO WORK :( */}
                 {/* NAME OF SCHOOL */}
                 <label htmlFor="newSchool">Name of School: </label>
                 <input id="newSchool" type="text" value={newSchool} onChange={handleSchool}/>
