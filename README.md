@@ -1,6 +1,6 @@
 ## Education Showwcase
 
-Link to application coming soon!
+Link to application: https://showwcase-challenge-client.herokuapp.com/
 
 Education Showwcase had to be one of the most challenging yet rewarding projects I've ever done. After submitting a cover letter to the company, I quickly received an email about this challenge (props to Showwcase for the quick response). 
 
